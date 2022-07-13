@@ -1,0 +1,243 @@
+/* 0 : 기본 그리드 */
+.father {
+    display: grid;
+    grid-template-columns: 250px 100px 200px;
+    grid-template-rows : 100px 50px 200px;
+    column-gap : 10px;
+    row-gap: 50px;
+    margin-bottom: 50px;
+}
+
+.child {
+    border: 1px solid #ddd;
+    background-color: blue;
+    color: #fff;
+}
+
+
+/* 1 : grid-area 속성으로 이름 지어서 레이아웃 만들기 */
+.grid1 {
+    display: grid;
+    grid-template-columns: auto repeat(3, 200px);
+    grid-template-rows: 50px repeat(2, 200px) 50px;
+    grid-template-areas:
+    "header header header header"
+    "content content content nav"
+    "content content content nav"
+    "footer footer footer footer";
+    margin-bottom: 50px;
+}
+
+.grid1 .header {
+    background-color: lightblue;
+    grid-area: header;
+}
+
+.grid1 .content {
+    background-color: darkgray;
+    grid-area: content;
+}
+
+.grid1 .nav {
+    background-color: bisque;
+    grid-area: nav;
+}
+
+.grid1 .footer {
+    background-color: lightcoral;
+    grid-area: footer;
+}
+
+
+/* 2 : start, end로 레이아웃 만들기 */
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.grid2 .header {
+    background-color: cadetblue;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.grid2 .content {
+    background-color: goldenrod;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.grid2 .nav {
+    background-color: lightgreen;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.grid2 .footer {
+    background-color: thistle;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+
+/* 3 : 축약 또는 라인에 이름을 지어서 할 수 있음 */
+.grid3 {
+    display: grid;
+    grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px;
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.grid3 .header {
+    background-color: deepskyblue;
+    grid-column: first-line / 5;
+}
+
+.grid3 .content {
+    background-color: steelblue;
+    grid-column: 1 / -2;
+    grid-row: 2 / 4;
+}
+
+.grid3 .nav {
+    background-color: skyblue;
+    grid-row: 2 / 4;
+}
+
+.grid3 .footer {
+    background-color: lightsteelblue;
+    grid-column: span 4;
+}
+
+
+/* 4 : px이 아닌 %나 fr 단위 사용 */
+.grid4 {
+    display: grid;
+    /* grid-template에서 repeat 사용 못함, naming의 사용은 자유 */
+    grid-template:
+    "header header header header" 1fr [header-end]
+    "content content content nav" 4fr [content-end]
+    "footer footer footer footer" 1fr [footer-end] / 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    width: 700px;
+    height: 50vh;
+    margin-bottom: 50px;
+}
+
+.grid4 .header {
+    background-color: lightcoral;
+    grid-area: header;
+}
+
+.grid4 .content {
+    background-color: thistle;
+    grid-area: content;
+}
+
+.grid4 .nav {
+    background-color: pink;
+    grid-area: nav;
+}
+
+.grid4 .footer {
+    background-color: lightpink;
+    grid-area: footer
+}
+
+
+/* 5 : justify-content, align-content, place-content */
+.grid5 {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+
+    /*justify-content: space-between;*/
+    /*align-content: center;*/
+    place-content: center space-between;
+
+    /*justify-items: end;*/
+    /*align-items: center;*/
+    /*place-items: center end;*/
+
+    height: 50vh;
+    margin-bottom: 50px;
+    background-color: #ddd;
+}
+
+.grid5 .header {
+    background-color: darkgreen;
+}
+
+.grid5 .content {
+    background-color: seagreen;
+}
+
+.grid5 .nav {
+    background-color: forestgreen;
+}
+
+.grid5 .footer {
+    background-color: mediumseagreen;
+}
+
+
+/* 6 : justify-self, align-self, place-self */
+.grid6 {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    height: 50vh;
+    margin-bottom: 50px;
+    border: 1px solid #ddd;
+}
+
+.grid6 .header {
+    background-color: darkgreen;
+    justify-self: center;
+}
+
+.grid6 .content {
+    background-color: seagreen;
+    align-self : end;
+}
+
+.grid6 .nav {
+    background-color: forestgreen;
+    justify-self: end;
+    align-self: center;
+}
+
+.grid6 .footer {
+    background-color: mediumseagreen;
+    place-self: end start;
+}
+
+
+/* 7 : grid-auto-rows, grid-auto-columns, grid-auto-flow, minmax */
+.grid7 {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(50px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: 50px;
+    grid-auto-columns: 50px;
+    grid-auto-flow: column;
+    gap: 10px;
+    height: 50vh;
+    margin-bottom: 50px;
+}
+
+.grid7 > div:nth-child(2n-1) {
+    background-color: goldenrod;
+}
+
+.grid7 > div:nth-child(2n) {
+    background-color: gold;
+}
