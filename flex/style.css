@@ -23,7 +23,6 @@
 .child:nth-child(2) {
     flex: 0 0 300px;
     background-color: lightblue;
-
 }
 
 .child:nth-child(3) {
