@@ -198,23 +198,23 @@
 }
 
 .grid6 .header {
-    background-color: darkgreen;
+    background-color: fuchsia;
     justify-self: center;
 }
 
 .grid6 .content {
-    background-color: seagreen;
+    background-color: crimson;
     align-self : end;
 }
 
 .grid6 .nav {
-    background-color: forestgreen;
+    background-color: chartreuse;
     justify-self: end;
     align-self: center;
 }
 
 .grid6 .footer {
-    background-color: mediumseagreen;
+    background-color: cyan;
     place-self: end start;
 }
 
@@ -241,7 +241,7 @@
 }
 
 
-/* 8 */
+/* 8 : auto-fill */
 .grid8 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -259,7 +259,7 @@
 }
 
 
-/* 9 */
+/* 9 : auto-fit */
 .grid9 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -272,7 +272,15 @@
 /* 10 : max-content, min-content */
 .grid10 {
     display: grid;
-    grid-template-columns: repeat(5, minmax(min-content, max-content));
-    grid-template-rows: repeat(5, minmax(100px, max-content));
+    grid-template-columns: repeat(auto-fit, minmax(20px, max-content));
+    grid-template-rows: repeat(5, minmax(auto, min-content));
     gap: 10px;
+}
+
+.grid10 .item:nth-child(2n-1) {
+    background-color: mediumpurple;
+}
+
+.grid10 .item:nth-child(2n) {
+    background-color: mediumslateblue;
 }
