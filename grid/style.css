@@ -49,7 +49,7 @@
 }
 
 
-/* 2 : start, end로 레이아웃 만들기 */
+/* 2 : -start, -end와 숫자를 이용해서 레이아웃 만들기 */
 .grid2 {
     display: grid;
     grid-template-columns: repeat(4, 100px);
@@ -85,7 +85,7 @@
 }
 
 
-/* 3 : 축약 또는 라인에 이름을 지어서 할 수 있음 */
+/* 3 : -start, -end를 축약하거나 라인에 이름을 지어서 레이아웃 만들기 */
 .grid3 {
     display: grid;
     grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px;
@@ -194,9 +194,7 @@
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 10px;
-    height: 50vh;
     margin-bottom: 50px;
-    border: 1px solid #ddd;
 }
 
 .grid6 .header {
@@ -240,4 +238,41 @@
 
 .grid7 > div:nth-child(2n) {
     background-color: gold;
+}
+
+
+/* 8 */
+.grid8 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.item:nth-child(2n-1) {
+    background-color: chocolate;
+}
+
+.item:nth-child(2n) {
+    background-color: coral;
+}
+
+
+/* 9 */
+.grid9 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+
+/* 10 : max-content, min-content */
+.grid10 {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(min-content, max-content));
+    grid-template-rows: repeat(5, minmax(100px, max-content));
+    gap: 10px;
 }
