@@ -1,0 +1,41 @@
+$minIphone: 500px;
+$maxIphone: 690px;
+$minTablet: $minIphone + 1;
+$maxTablet: 1120px;
+$minPc: $maxTablet + 1;
+
+// variable
+@mixin sexyTitle($color) {
+    color: $color;
+    font-size: 35px;
+}
+
+// @if / @else if / @else
+@mixin linkWord($word) {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+
+    @if $word == "odd" {
+        color: pink;
+    } @else {
+        color: hotpink;
+    }
+}
+
+// @content
+@mixin responsive($device) {
+    @if $device == 'iphone' {
+        @media screen and (min-width: $minIphone) and (max-width: $maxIphone) {
+            @content;
+        }
+    } @else if $device == 'tablet' {
+        @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
+            @content;
+        }
+    } @else if $device == 'pc'{
+        @media screen and (min-width: $minPc) and (max-width: 1440px){
+            @content;
+        }
+    }
+}
