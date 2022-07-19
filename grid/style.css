@@ -232,11 +232,11 @@
     margin-bottom: 50px;
 }
 
-.grid7 > div:nth-child(2n-1) {
+.grid7 > div:nth-child(odd) {
     background-color: goldenrod;
 }
 
-.grid7 > div:nth-child(2n) {
+.grid7 > div:nth-child(even) {
     background-color: gold;
 }
 
@@ -250,14 +250,14 @@
     margin-bottom: 50px;
 }
 
-.item:nth-child(2n-1) {
+.item:nth-child(odd) {
     background-color: chocolate;
 }
 
-.item:nth-child(2n) {
+.item:nth-child(even) {
     background-color: coral;
 }
-  
+
 
 /* 9 : auto-fit */
 .grid9 {
