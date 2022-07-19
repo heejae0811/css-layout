@@ -1,0 +1,72 @@
+p, span {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #000;
+  border-radius: 7px;
+  font-size: 12px;
+  font-family: Arial, serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 45px;
+  background-color: #ddd;
+}
+
+h1 {
+  color: navy;
+  font-size: 35px;
+}
+@media screen and (min-width: 500px) and (max-width: 690px) {
+  h1 {
+    color: red;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 1120px) {
+  h1 {
+    color: orange;
+  }
+}
+@media screen and (min-width: 1121px) and (max-width: 1440px) {
+  h1 {
+    color: yellow;
+  }
+}
+
+a {
+  display: block;
+  margin-bottom: 10px;
+}
+a:nth-child(even) {
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  color: hotpink;
+}
+a:nth-child(odd) {
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  color: pink;
+}
+
+h2 {
+  color: red;
+}
+
+.box h2 {
+  color: blue;
+}
+.box button {
+  background-color: green;
+}
+.box button:hover {
+  background-color: lightGreen;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,76 @@
+@import "_extend";
+@import "_mixin";
+@import "_variables";
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 45px;
+    background-color: $bgColor;
+}
+
+
+// extend와 mixin의 차이는 css로 컴파일 된 결과이다.
+span {
+    @extend %button;
+    //@include sexyTitle($fontColor);
+}
+
+p {
+    @extend %button;
+    //@include sexyTitle($fontColor);
+}
+
+
+// 반응형 적용
+h1 {
+    @include sexyTitle($fontColor);
+
+    @include responsive('iphone') {
+        color: red;
+    }
+    @include responsive('tablet') {
+        color: orange;
+    }
+    @include responsive('pc'){
+        color: yellow;
+    }
+}
+
+
+// variable
+a {
+    display: block;
+    margin-bottom: 10px;
+
+    &:nth-child(even) {
+        @include linkWord("even");
+    }
+
+    &:nth-child(odd) {
+        @include linkWord("odd");
+    }
+}
+
+
+// nesting
+h2 {
+    color: red;
+}
+
+.box {
+    h2 {
+        color: blue;
+    }
+
+    button {
+        background-color: green;
+
+        &:hover {
+            background-color: lightGreen;
+        }
+    }
+}
