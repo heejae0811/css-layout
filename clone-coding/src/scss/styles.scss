@@ -6,11 +6,16 @@
 body {
     font-family: 'Noto Sans', sans-serif;
     line-height: 1.2;
+
+    img {
+        width: 100%;
+    }
 }
+
 
 /*
     01. Best Horror Scenes
-    sidebar를 flex-direction: column; 을 사용해서 세로 정렬
+    sidebar 를 flex-direction: column; 을 사용해서 세로 정렬
     background: linear-gradient(); 를 사용해서 배경색 지정
 */
 .best-horror {
@@ -88,7 +93,7 @@ body {
             background: linear-gradient(to top, rgba(0,0,0,0.9), 1%, $red);
 
             .inner {
-                // margin: 0 auto; 를 사용하면 크기가 자동으로 줄어들지 않기 때문에 부모네 flex 사용
+                // margin: 0 auto; 를 사용하면 크기가 자동으로 줄어들지 않기 때문에 부모에 flex 사용
                 width: 960px;
 
                 .title {
@@ -122,3 +127,271 @@ body {
         }
     }
 }
+
+
+/*
+    02. Paint Box
+    flex 는 중앙/중앙 정렬 때 사용하기 좋다.
+    flex 를 사용했을 경우, 자식의 width 값을 지정해줘야 하지만,
+    grid 의 경우 1fr을 사용해서 바로 width 를 지정할 수 있다.
+*/
+.paint-box {
+    body > *:not(.footer) {
+        /* 이걸 어떻게 사용하면 효과적일까 */
+    }
+
+    .inner {
+        width: 1623px;
+        margin: 0 auto;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background-color: $white;
+
+        &__logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            background: url("../../src/img/paint-box/logo.png") no-repeat center center / cover;
+            text-indent: -9999px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            ul {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                height: 70px;
+
+                li {
+                    font-size: 10px;
+                }
+            }
+
+            &__main {
+                li {
+                    margin-right: 40px;
+                }
+            }
+
+            &__sub {
+                li {
+                    margin-left: 40px;
+                }
+            }
+        }
+    }
+
+    .main {
+        margin-top: 100px;
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        &__sec01 {
+            width: 100%;
+            height: 743px;
+            background: url("../../src/img/paint-box/main_sec01.jpg") no-repeat center center / cover;
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                color: $white;
+
+                &__main {
+                    font-size: 50px;
+                    line-height: 48px;
+                }
+            }
+
+            .btn__link {
+                border: 1px solid $white;
+                color: $white;
+
+                &:hover {
+                    background-color: $white;
+                    color: $black;
+                }
+            }
+        }
+
+        // flex, 자식에 width 필요
+        &__sec02 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: $beige;
+
+            > div {
+                width: 50%;
+            }
+        }
+
+        // grid, 자식에 width 불필요
+        &__sec03 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            background-color: $mint;
+        }
+
+        &__sec04 {
+            padding-bottom: 80px;
+
+            .list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+
+                div {
+                    dl {
+                        text-align: center;
+
+                        dt {
+                            img {
+                                max-width :450px;
+                            }
+                        }
+
+                        .label {
+                            font-size: 10px;
+                            line-height: 15px;
+                            letter-spacing: 2.2px;
+                        }
+
+                        .name {
+                            margin: 10px auto 20px;
+                            font-size: 30px;
+                            font-family: freight-display-pro,Times New Roman,serif;
+                            font-style: italic;
+                            line-height :38px;
+                        }
+
+                        .price {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__sec05 {
+            ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px auto 0;
+
+                li {
+                    width: 200px;
+                    border-left: 1px solid $black;
+                    text-align: center;
+
+                    &:first-child {
+                        border-left: 0;
+                    }
+
+                    img {
+                        max-width: 100px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+        &__sec06 {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+
+                li {
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        &__sec07 {
+            p {
+                font-size: 40px;
+                font-family: freight-display-pro,Times New Roman,serif;
+                text-align: center;
+
+                span {
+                    color: #9d9d9c;
+                }
+            }
+        }
+    }
+
+    .footer {
+        padding: 65px;
+        background-color: $beige;
+
+        .inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            > div {
+                border-left: 1px solid $black;
+                font-size: 10px;
+                text-align: center;
+
+                &:first-child {
+                    border-left: 0;
+                }
+            }
+
+            p {
+                color: #9d9d9c;
+                margin-bottom: 25px;
+            }
+
+            ul {
+                li {
+                    margin-bottom: 15px;
+                }
+            }
+
+        }
+    }
+
+    // common
+    .btn {
+        @include paintBoxButton();
+        margin-top: 50px;
+    }
+
+    .text {
+        text-align: center;
+
+        &__sub {
+            margin-bottom: 30px;
+            font-size: 10px;
+            letter-spacing: 2.2px;
+        }
+
+        &__main {
+            font-size: 34px;
+            font-family: freight-display-pro,Times New Roman,serif;
+            line-height: 38px;
+        }
+    }
+}
+

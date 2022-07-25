@@ -1,13 +1,19 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap");
+/*
+    02. Paint Box
+*/
 body {
   font-family: "Noto Sans", sans-serif;
   line-height: 1.2;
 }
+body img {
+  width: 100%;
+}
 
 /*
     01. Best Horror Scenes
-    sidebar를 flex-direction: column; 을 사용해서 세로 정렬
+    sidebar 를 flex-direction: column; 을 사용해서 세로 정렬
     background: linear-gradient(); 를 사용해서 배경색 지정
 */
 .best-horror .sidebar {
@@ -96,6 +102,219 @@ body {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
+}
+
+/*
+    02. Paint Box
+    flex 는 중앙/중앙 정렬 때 사용하기 좋다.
+    flex 를 사용했을 경우, 자식의 width 값을 지정해줘야 하지만,
+    grid 의 경우 1fr을 사용해서 바로 width 를 지정할 수 있다.
+*/
+.paint-box body > *:not(.footer) {
+  /* 이걸 어떻게 사용하면 효과적일까 */
+}
+.paint-box .inner {
+  width: 1623px;
+  margin: 0 auto;
+}
+.paint-box .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+}
+.paint-box .header__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background: url("../../src/img/paint-box/logo.png") no-repeat center center/cover;
+  text-indent: -9999px;
+}
+.paint-box .header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.paint-box .header .nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70px;
+}
+.paint-box .header .nav ul li {
+  font-size: 10px;
+}
+.paint-box .header .nav__main li {
+  margin-right: 40px;
+}
+.paint-box .header .nav__sub li {
+  margin-left: 40px;
+}
+.paint-box .main {
+  margin-top: 100px;
+}
+.paint-box .main section {
+  margin-bottom: 80px;
+}
+.paint-box .main__sec01 {
+  width: 100%;
+  height: 743px;
+  background: url("../../src/img/paint-box/main_sec01.jpg") no-repeat center center/cover;
+}
+.paint-box .main__sec01 .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+}
+.paint-box .main__sec01 .text__main {
+  font-size: 50px;
+  line-height: 48px;
+}
+.paint-box .main__sec01 .btn__link {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.paint-box .main__sec01 .btn__link:hover {
+  background-color: #fff;
+  color: #000;
+}
+.paint-box .main__sec02 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fbf7f6;
+}
+.paint-box .main__sec02 > div {
+  width: 50%;
+}
+.paint-box .main__sec03 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  background-color: #dee8e9;
+}
+.paint-box .main__sec04 {
+  padding-bottom: 80px;
+}
+.paint-box .main__sec04 .list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.paint-box .main__sec04 .list div dl {
+  text-align: center;
+}
+.paint-box .main__sec04 .list div dl dt img {
+  max-width: 450px;
+}
+.paint-box .main__sec04 .list div dl .label {
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 2.2px;
+}
+.paint-box .main__sec04 .list div dl .name {
+  margin: 10px auto 20px;
+  font-size: 30px;
+  font-family: freight-display-pro, Times New Roman, serif;
+  font-style: italic;
+  line-height: 38px;
+}
+.paint-box .main__sec04 .list div dl .price {
+  font-size: 12px;
+}
+.paint-box .main__sec05 ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 0;
+}
+.paint-box .main__sec05 ul li {
+  width: 200px;
+  border-left: 1px solid #000;
+  text-align: center;
+}
+.paint-box .main__sec05 ul li:first-child {
+  border-left: 0;
+}
+.paint-box .main__sec05 ul li img {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+.paint-box .main__sec06 ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.paint-box .main__sec06 ul li img {
+  height: 100%;
+}
+.paint-box .main__sec07 p {
+  font-size: 40px;
+  font-family: freight-display-pro, Times New Roman, serif;
+  text-align: center;
+}
+.paint-box .main__sec07 p span {
+  color: #9d9d9c;
+}
+.paint-box .footer {
+  padding: 65px;
+  background-color: #fbf7f6;
+}
+.paint-box .footer .inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.paint-box .footer .inner > div {
+  border-left: 1px solid #000;
+  font-size: 10px;
+  text-align: center;
+}
+.paint-box .footer .inner > div:first-child {
+  border-left: 0;
+}
+.paint-box .footer .inner p {
+  color: #9d9d9c;
+  margin-bottom: 25px;
+}
+.paint-box .footer .inner ul li {
+  margin-bottom: 15px;
+}
+.paint-box .btn {
+  display: block;
+  width: 240px;
+  height: 55px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+  font-size: 10px;
+  text-align: center;
+  line-height: 53px;
+  transition: all 0.3s;
+  margin-top: 50px;
+}
+.paint-box .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+.paint-box .text {
+  text-align: center;
+}
+.paint-box .text__sub {
+  margin-bottom: 30px;
+  font-size: 10px;
+  letter-spacing: 2.2px;
+}
+.paint-box .text__main {
+  font-size: 34px;
+  font-family: freight-display-pro, Times New Roman, serif;
+  line-height: 38px;
 }
 
 /*# sourceMappingURL=styles.css.map */
