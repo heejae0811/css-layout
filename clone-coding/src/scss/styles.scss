@@ -397,3 +397,72 @@ body {
     }
 }
 
+
+/*
+    03. 10x19
+    세로값을 동일하게 하기
+    grid-template-rows: 1fr 5fr 1fr; 로 1:5:1 비율 맞추기
+*/
+.ten {
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    gap: 1px;
+    width: 100%;
+    height: 100vh;
+
+    header, footer {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            height: 100%;
+        }
+    }
+
+    header, footer {
+        li:nth-child(1), li:nth-child(2) {
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        ul {
+            display: grid;
+        }
+    }
+
+    ul {
+        li {
+            border: 1px solid $ocher;
+            border-top: 0;
+            border-left: 0;
+            color: $ocher;
+            font-size: 30px;
+            text-align: center;
+            transition: all .3s;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                transition: all .3s;
+
+                &:hover {
+                    color: $white;
+                    background-color: $ocher;
+                }
+            }
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
+

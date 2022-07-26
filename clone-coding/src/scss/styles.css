@@ -317,4 +317,58 @@ body img {
   line-height: 38px;
 }
 
+/*
+    03. 10x19
+    세로값을 동일하게 하기
+    grid-template-rows: 1fr 5fr 1fr; 로 1:5:1 비율 맞추기
+*/
+.ten {
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
+  gap: 1px;
+  width: 100%;
+  height: 100vh;
+}
+.ten header ul, .ten footer ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  height: 100%;
+}
+.ten header li:nth-child(1), .ten header li:nth-child(2), .ten footer li:nth-child(1), .ten footer li:nth-child(2) {
+  cursor: default;
+  pointer-events: none;
+}
+.ten main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.ten main ul {
+  display: grid;
+}
+.ten ul li {
+  border: 1px solid #af7832;
+  border-top: 0;
+  border-left: 0;
+  color: #af7832;
+  font-size: 30px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.ten ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+.ten ul li a:hover {
+  color: #fff;
+  background-color: #af7832;
+}
+.ten ul li img {
+  height: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */
