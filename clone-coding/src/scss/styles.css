@@ -409,6 +409,9 @@ body img {
     float 를 초기화하기 위해서는 부모에 display: inline-block; 를 설정한다.
     grid, flex 와 position: sticky; 는 함께 사용할 수 없다. (높이를 인식하지 못하기 때문이다.)
     상단 고정 헤더에 position: fixed; 대신에 sticky 를 사용해도 된다.
+
+    hover 효과를 줄 때 opacity 로 투명도를 조절하 수도 있고,
+    filter: blur(10px); 처럼 블러효과를 적용할 수도 있다. (px 단위로 조절, % 안됨)
 */
 .tolv header {
   position: sticky;
@@ -494,7 +497,7 @@ body img {
   transition: all 0.3s;
 }
 .tolv main .gallery div ul img:hover {
-  opacity: 0.5;
+  filter: blur(5px);
 }
 .tolv main .gallery div:nth-child(2) ul {
   grid-template-columns: 1fr 2fr 1fr;
@@ -556,6 +559,70 @@ body img {
 }
 
 /*
+    09. Donica Ida Design
 */
+.donica {
+  padding: 50px;
+}
+.donica header {
+  margin-bottom: 100px;
+}
+.donica header h1 {
+  font-size: 38px;
+  font-weight: 700;
+  font-family: "copernicus", serif;
+}
+.donica main {
+  margin-bottom: 200px;
+}
+.donica main > div {
+  border-top: 1px solid #000;
+  transition: all 0.3s;
+}
+.donica main > div:first-child {
+  border-top: 0;
+}
+.donica main > div:first-child li {
+  color: #ff6429;
+}
+.donica main > div > ul {
+  display: grid;
+  grid-template-columns: 1fr 5fr 8fr 1fr;
+  padding: 30px 0 10px;
+}
+.donica main > div > ul li {
+  font-size: 20px;
+}
+.donica main > div:hover .hidden-area {
+  display: block;
+}
+.donica footer p {
+  margin-bottom: 50px;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: "copernicus", serif;
+}
+.donica footer p span {
+  font-size: 12px;
+  font-weight: 300;
+}
+.donica .hidden-area {
+  display: none;
+}
+.donica .hidden-area > div {
+  display: grid;
+  grid-template-columns: 1fr 9fr 5fr;
+  padding: 60px 0 100px;
+}
+.donica .hidden-area > div p {
+  margin-bottom: 50px;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: "copernicus", serif;
+}
+.donica .hidden-area > div ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
 
 /*# sourceMappingURL=styles.css.map */
