@@ -325,7 +325,6 @@ body img {
 .ten {
   display: grid;
   grid-template-rows: 1fr 5fr 1fr;
-  gap: 1px;
   width: 100%;
   height: 100vh;
 }
@@ -372,7 +371,7 @@ body img {
 }
 
 /*
-    40. z-o-o
+    04. z-o-o
 */
 .zoo header {
   display: grid;
@@ -403,6 +402,157 @@ body img {
 }
 .zoo main ul li p {
   padding: 5px 10px;
+}
+
+/*
+    06. Tolv
+    float 를 초기화하기 위해서는 부모에 display: inline-block; 를 설정한다.
+    grid, flex 와 position: sticky; 는 함께 사용할 수 없다. (높이를 인식하지 못하기 때문이다.)
+    상단 고정 헤더에 position: fixed; 대신에 sticky 를 사용해도 된다.
+*/
+.tolv header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.tolv header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 1600px;
+  height: 60px;
+  margin: 0 auto;
+}
+.tolv header nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tolv header nav ul li {
+  margin-left: 50px;
+}
+.tolv header nav ul li:first-child {
+  margin-left: 0;
+}
+.tolv header nav h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tolv main .kv {
+  display: inline-block;
+  width: 100%;
+}
+.tolv main .kv__img {
+  float: left;
+  width: 50%;
+}
+.tolv main .kv__img div {
+  width: 100%;
+  height: 950px;
+}
+.tolv main .kv__img div:nth-child(1) {
+  background: url("../../src/img/tolv/kv01.jpg") no-repeat center center/cover;
+}
+.tolv main .kv__img div:nth-child(2) {
+  background: url("../../src/img/tolv/kv02.jpg") no-repeat center center/cover;
+}
+.tolv main .kv__img div:nth-child(3) {
+  background: url("../../src/img/tolv/kv03.jpg") no-repeat center center/cover;
+}
+.tolv main .kv__img div:nth-child(4) {
+  background: url("../../src/img/tolv/kv04.jpg") no-repeat center center/cover;
+}
+.tolv main .kv__text {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.tolv main .text {
+  padding: 100px 0;
+  background-color: #efcb56;
+}
+.tolv main .gallery {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+}
+.tolv main .gallery div ul {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 5px;
+}
+.tolv main .gallery div ul img {
+  height: 100%;
+  transition: all 0.3s;
+}
+.tolv main .gallery div ul img:hover {
+  opacity: 0.5;
+}
+.tolv main .gallery div:nth-child(2) ul {
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.tolv footer {
+  background-color: #535851;
+}
+.tolv footer div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 1400px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+.tolv footer div dl {
+  color: #fff;
+  font-size: 16px;
+}
+.tolv footer div dl dt {
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+.tolv footer div dl dd {
+  display: table;
+  margin-bottom: 15px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+.tolv footer div dl dd:hover {
+  border-bottom: 1px solid #fff;
+}
+.tolv footer div dl dd.block {
+  margin-bottom: 50px;
+}
+.tolv .common-text h2 {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "NantesWeb", serif;
+  line-height: 50px;
+  text-align: center;
+}
+.tolv .common-text h3 {
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "NantesWeb", serif;
+  line-height: 42px;
+  text-align: center;
+}
+.tolv .common-text p {
+  margin-top: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+.tolv .common-text p span {
+  color: #ff6429;
+  border-bottom: 1px solid #ff6429;
 }
 
 /*# sourceMappingURL=styles.css.map */
