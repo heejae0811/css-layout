@@ -560,6 +560,14 @@ body img {
 
 /*
     09. Donica Ida Design
+    hidden-area 영역과 리스트 영역의 너비를 동일하게 하기 위해서
+    hidden-area 에 빈 <div> 태그를 사용했다.
+
+    grid-template-columns: 1fr 5fr 8fr 1fr;
+    grid-template-columns: 1fr 9fr 5fr;
+    15fr 을 동일하게 맞춰 화면을 줄여도 원하는 영역안에만 컨텐츠가 들어가게 했다.
+
+    빈 태그 안쓰고 하고 싶은데 방법을 모르겠음.. 노마드씨도 이건 안함;;
 */
 .donica {
   padding: 50px;
@@ -624,5 +632,9 @@ body img {
   margin-bottom: 5px;
   font-size: 14px;
 }
+
+/*
+    10. Canal Street Market
+*/
 
 /*# sourceMappingURL=styles.css.map */
