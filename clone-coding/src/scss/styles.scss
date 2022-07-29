@@ -807,6 +807,9 @@ body {
 
 /*
     10. Canal Street Market
+    keyframe 과 background-image 로 animation 효과 적용할 수 있다.
+    grid 사용시, 높이값 없이 padding 으로 여백을 주면 세로 가운데 정렬처럼 보인다.
+    grid-template-columns 와 grid-column 으로 요소를 원하는 곳에 위치시킬 수 있다.
 */
 .canal {
     header {
@@ -1050,7 +1053,6 @@ body {
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
                         gap: 60px;
-
 
                         li {
                             padding: 100px 60px;
