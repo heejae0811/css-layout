@@ -808,3 +808,332 @@ body {
 /*
     10. Canal Street Market
 */
+.canal {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 60px;
+        background-color: transparent;
+
+        h1 {
+            width: 60px;
+            height: 60px;
+            border: 1px solid $black;
+            border-radius: 50%;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                text-align: center;
+                line-height: 60px;
+            }
+        }
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        ul {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            li {
+                width: 60px;
+                height: 100vh;
+
+                &:nth-child(1) {
+                    background-color: rgb(94, 163, 236);
+                }
+
+                &:nth-child(2) {
+                    background-color: rgb(246, 68, 68);
+                }
+
+                &:nth-child(3) {
+                    background-color: rgb(255, 180, 0);
+                }
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    padding: 77px 0;
+                    font-size: 20px;
+
+                    p {
+                        margin-bottom: 350px;
+                    }
+
+                    span {
+                        display: block;
+                        font-family: apercu mono, sans-serif;
+                        letter-spacing: 2px;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        section {
+            width: calc(100% - 300px);
+            padding: 60px;
+
+            &.sec01 {
+                display: flex;
+                align-items: center;
+                padding: 280px 60px 177px;
+
+                h2 {
+                    max-width: 1030px;
+                    width: 100%;
+                    font-size: 75px;
+                    font-family: ogg, sans-serif;
+                    line-height: 86px;
+                }
+            }
+
+            &.sec02 {
+                width: 100%;
+                height: 100vh;
+                padding: 0;
+                background: url("../../src/img/canalstreet/kv.jpg") no-repeat center center / cover;
+            }
+
+            &.sec03 {
+                h2 {
+                    max-width: 645px;
+                    width: 100%;
+                    margin: 100px 0;
+                    font-size: 113px;
+                    font-family: ogg, sans-serif;
+                    line-height: 120px;
+                }
+
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 60px;
+
+                    li {
+                        p {
+                            margin-top: 30px;
+                            font-size: 14px;
+                            font-family: apercu mono, sans-serif;
+                            line-height: 21px;
+                        }
+                    }
+                }
+            }
+
+            &.sec04 {
+                @keyframes border {
+                    0% {
+                        background-position: 0 0, 0 100%, 0 0, 100% 0;
+                    }
+                    100% {
+                        background-position: 30px 0, -30px 100%, 0 -30px, 100% 30px;
+                    }
+                }
+
+                h2 {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    font-size: 100px;
+                    font-family: ogg, sans-serif;
+                    line-height: 100px;
+                    text-align: center;
+
+                    span {
+                        font-size: 65px;
+                    }
+                }
+
+                .list {
+                    margin: 100px auto;
+
+                    .line {
+                        position: relative;
+                        width: 100%;
+                        height: 15px;
+                        background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#fff 50%,transparent 0),linear-gradient(180deg,#fff 50%,transparent 0);
+                        background-position: 0 0,0 100%,0 0,100% 0;
+                        background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+                        background-size: 30px 1px,30px 1px,1px 30px,1px 30px;
+                        animation: 1s infinite linear border;
+                        animation-timing-function: linear;
+                    }
+
+                    ul {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        padding: 75px 0;
+                        text-align: center;
+
+                        span {
+                            display: block;
+                            margin-bottom: 15px;
+                            font-size: 12px;
+                            font-family: apercu mono,sans-serif;
+                        }
+
+                        p {
+                            font-size: 16px;
+                            font-family: apercu mono, sans-serif;
+                        }
+                    }
+
+                    button {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                .map {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 60px;
+
+                    > * {
+                        padding: 1px;
+                        background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0);
+                        background-position: 0 0,0 100%,0 0,100% 0;
+                        background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+                        background-size: 30px 1px,30px 1px,1px 30px,1px 30px;
+                        animation: .4s infinite linear border;
+                        animation-timing-function: linear;
+                        animation-play-state: paused;
+
+                        &:hover {
+                            animation-play-state: running;
+                        }
+                    }
+
+                    p {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0 60px;
+                        font-size: 60px;
+                        font-family: ogg, sans-serif;
+                        text-align: center;
+                    }
+                }
+
+                .vendor {
+                    margin: 100px auto;
+                    text-align: center;
+
+                    p {
+                        margin-bottom: 50px;
+                        font-size: 45px;
+                        font-family: ogg, sans-serif;
+                    }
+                }
+
+                .sns {
+                    ul {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 60px;
+
+
+                        li {
+                            padding: 100px 60px;
+                            background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0);
+                            background-position: 0 0,0 100%,0 0,100% 0;
+                            background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+                            background-size: 30px 1px,30px 1px,1px 30px,1px 30px;
+                            text-align: center;
+                            animation: .4s infinite linear border;
+                            animation-timing-function: linear;
+                            animation-play-state: paused;
+
+                            &:hover {
+                                animation-play-state: running;
+                            }
+                        }
+                    }
+                }
+
+                .form {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    margin: 60px auto 0;
+                    padding: 100px 60px;
+                    background-image: linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(90deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0),linear-gradient(180deg,#000 50%,transparent 0);
+                    background-position: 0 0,0 100%,0 0,100% 0;
+                    background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
+                    background-size: 30px 1px,30px 1px,1px 30px,1px 30px;
+                    animation: .4s infinite linear border;
+                    animation-timing-function: linear;
+                    animation-play-state: paused;
+
+                    &:hover {
+                        animation-play-state: running;
+                    }
+
+                    p {
+                        max-width: 250px;
+                        width: 100%;
+                        font-size: 22px;
+                        font-family: apercu mono, sans-serif;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 20px;
+                        border: 1px solid $black;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 180px);
+        padding: 0 60px 60px;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 50px;
+
+            li:last-child {
+                grid-column: -1;
+            }
+        }
+    }
+
+    button {
+        width: 180px;
+        height: 64px;
+        margin: 0 auto;
+        border: 1px solid $black;
+        background-color: $white;
+        font-size: 16px;
+        font-family: apercu mono, sans-serif;
+        transition: all .3s;
+
+        &:hover {
+            color: $white;
+            background-color: $black;
+        }
+    }
+}
